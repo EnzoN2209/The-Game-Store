@@ -1,0 +1,361 @@
+html{
+    padding: 0 0;
+    margin: 0 0;
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+/* HEADER*/
+#logo{
+    height: 26.25px;
+    width: 112.5px;
+}
+.header-container{
+    width: 100%;
+    height: 60px;
+    background-color: black;
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+.menu a{
+    color: white;
+}
+#account-img{
+    width: 30px;
+    height: 30px;
+    margin-left: 11.25px;
+
+}
+#searchBAR{
+    border-radius: 12px;
+    background-color: rgba(115, 112, 111, 0.5);
+    font-size: 1em;
+    color: white;
+    border: none;
+    width: 375px;
+    height: 30px;
+}
+#searchBAR:focus{
+    outline: none;
+}
+#cart-img{
+    width: 30px;
+    height: 30px;
+
+}
+/* INDEX*/
+#header-space{
+    height: 60px;
+    width: 100%;
+}
+
+#frontIMG{
+    width: 100%;
+    height: 506.25px;
+    user-select: none;
+    object-fit: fill;
+    pointer-events: none;
+    display: block;
+}
+
+#precedent, #suivant{
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    font-size: 75px;
+    color: white;
+    padding: 7.5px;
+    top: 210px;
+
+}
+
+#precedent{
+    left: 0px;
+}
+
+#suivant{
+    right: 0px;
+}
+
+#slider:hover #precedent,
+#slider:hover #suivant {
+    opacity: 1;
+}
+.products-genre {
+    display: block;
+    background-color: rgb(46, 46, 46);
+    height: 525px;
+    padding: 30px 150px;
+    padding-bottom: 0px;
+
+}
+.game-action-label{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#action{
+    color: white;
+    font-size: 26.25px;
+}
+#show-catalogue{
+    font-size: 18.75px;
+    text-decoration: none;
+    color: white;
+    font-family: "proxima-nova", arial, sans-serif;
+}
+.games{
+    margin-top: 22.5px;
+    width: 100%;
+    height: 525px;
+}
+.games{
+    display: grid;
+    grid-template-columns: repeat(3, 225px);
+    gap: 15px;
+    height: 375px;
+    overflow: auto;
+    justify-content: center;
+}
+#games-game{
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+}
+.game{
+    width: 1fr;
+    height: 172.5px;
+    border-radius: 15px;
+}
+.game-img{
+    width: 230px;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    height: 135px;
+    transition: transform .1s;
+    margin-bottom: 3.75px;
+}
+.game-img:hover{
+    transform: scale(1.1);
+}
+.error-img{
+    width: 225px;
+    height: 127.5px;
+}
+.error-img span{
+    font-size: 30px;
+    color: white;
+}
+.game-infos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1em;
+    color: white;
+}
+#game-name{
+    font-size: 15px;
+    transition: transform .1s;
+    font-family: "proxima-nova", arial, sans-serif;
+    
+}
+#game-name:hover{
+    transform : scale(1,1);
+
+}
+/*PAGE DETAILLEE*/
+span{
+    font-family: "proxima-nova", arial, sans-serif;
+}
+.card{
+    width: 1125px;
+    min-height: 1125px;
+    margin: auto;
+    margin-top: 75px;
+    background-color: rgb(46, 46, 46);
+    border-radius: 15px;
+    margin-bottom: 18.75;
+}
+.card-back-img{
+    width: 1125px;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    height: 315px;
+}
+.card-img{
+    width: 562.5px;
+    height: 322.5px;
+    border-radius: 15px;
+}
+.card-infos{
+    width: 1125px;
+    height: 315px;
+    position: relative;
+    top: -150px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.card-infos-game{
+    width: 375px;
+    height: 300px;
+    background-color: rgba(115, 112, 111, 0.5);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+}
+.card-infos-game-inner{
+    width: 375px;
+    height: 322.5px;
+}
+#card-infos-game-inner-name{
+    padding: 7.5px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.3em;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#card-infos-game-inner-price{
+    margin-top: 37.5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    font-size: 2em;
+    color: white;
+
+}
+#card-infos-game-inner-plateformes{
+    margin-top: 18.75px;
+    display: block;
+    flex-direction: row;
+    justify-content: center;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.2em;
+    color: white;
+}
+#card-infos-game-inner-cart{
+    padding: 15px 37.5px;
+    margin: auto;
+    margin-top: 56px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    font-size: 1em;
+    background: rgb(255, 126, 1);
+    background: linear-gradient(90deg, rgba(255, 126, 1, 1) 0%, rgba(255, 66, 31, 1) 100%);
+    border-radius: 15px;
+    cursor: pointer;
+}
+#card-infos-game-inner-cart:hover {
+    background: rgb(255, 124, 1);
+    background: linear-gradient(90deg, rgba(255, 124, 1, 1) 0%, rgba(254, 35, 31, 1) 100%);
+
+}
+.card-description{
+    margin: auto;
+    margin-top: -67.5px;
+    text-align: center;
+    width: 750px;
+    min-height: 225px;
+}
+.card-description span{
+    display: flex;
+    flex-direction: column;
+}
+#description-title{
+    color: white;
+    font-size: 1.7em;
+    text-align: left;
+    font-family: "proxima-nova", arial, sans-serif;
+}
+#description-text{
+    color: white;
+    font-size: 1.5em;
+    text-align: left;
+    margin-top: 7.5px;
+    font-family: "proxima-nova", arial, sans-serif;
+}
+/*CATALOGUE*/
+.catalogue{
+    height: 750px;
+    background-color: rgb(46, 46, 46);
+    width: 100%;
+}
+
+.catalogue-parameters{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    width: 450px;
+    height: 60px;
+}
+
+.catalogue-body{
+    background-color: rgb(46, 46, 46);
+}
+
+.header-takeplace{
+    width: 100%;
+    height: 60px;
+}
+
+.catalogue-products{
+    display: block;
+    background-color: rgb(46, 46, 46);
+    height: 750px;
+    padding: 30px 150px;
+    padding-bottom: 0px;
+}
+
+.catalogue-games{
+    display: grid;
+    grid-template-columns: repeat(4, 225px);
+    gap: 15px;
+    height: 375px;
+    justify-content: center;
+}
+
+#noGameFound{
+    font-size: 2em;
+    color: white;
+    font-weight: bold;
+    width: 600px;
+    position: absolute;
+    top: 150px;
+    left: 525px;
+}
+
+/*FOOTER*/
+.footer-container{
+    width: 100%;
+    height: 112.5px;
+    background-color: black;
+    bottom: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.footer-container a{
+    color: white;
+    font-family: "proxima-nova", arial, sans-serif;
+}

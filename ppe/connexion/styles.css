@@ -1,0 +1,304 @@
+/*Both Login & Register*/
+* {
+    padding: 0 0;
+    margin: 0 0;
+
+}
+
+body {
+    font-family: "proximanova", arial, sans-serif;
+    /* Hide scrollbars */
+    background-color: rgb(50, 50, 50);
+    overflow: hidden;
+}
+
+.grid {
+    display: grid;
+    height: 869px;
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-row: auto;
+    grid-gap: 0px;
+    padding: 0px;
+    width: auto;
+}
+
+.background {
+    height: 100%;
+    background-color: rgb(50, 50, 50);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.background2 {
+    height: 100%;
+    background-color: rgb(50, 50, 50);
+}
+
+.background2 img {
+    object-fit: cover;
+}
+
+.logo {
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    background-color: rgb(50, 50, 50);
+    height: 40px;
+
+}
+
+.login {
+    background-color: rgb(50, 50, 50);
+    height: 300px;
+    padding: 2px;
+    margin: 20px 100px;
+}
+
+.comForm {
+    border: 10px;
+    border-color: rgb(61, 61, 61);
+    background-color: rgb(36, 36, 36);
+    outline: orange;
+    color: white;
+    font-size: 14px;
+    height: 35px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 4px;
+    width: 85%;
+}
+
+.spacer {
+
+    height: 10px;
+}
+
+.showpass {
+
+    padding: 5px;
+    margin: 5px;
+}
+
+/*Login*/
+.logbutton {
+
+    border: 2px;
+    background: rgb(255, 126, 1);
+    background: linear-gradient(90deg, rgba(255, 126, 1, 1) 0%, rgba(255, 66, 31, 1) 100%);
+    font-size: 14px;
+    color: white;
+    height: 40px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 4px;
+    font-display: center;
+    width: 90%;
+}
+
+.logbutton:hover {
+    background: rgb(255, 124, 1);
+    background: linear-gradient(90deg, rgba(255, 124, 1, 1) 0%, rgba(254, 35, 31, 1) 100%);
+
+}
+
+.forgotpassword {
+    float: left;
+    margin-left: 3px;
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.createacc {
+    float: right;
+    margin-right: 35px;
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.createacc:hover,
+.forgotpassword:hover {
+
+    color: #ff421f;
+}
+
+#errormsg {
+    color: red;
+}
+
+/*Register*/
+.gridcolumn {
+    display: grid;
+    height: 50%;
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-row: auto;
+    grid-gap: 0px;
+    padding: 0px;
+    width: auto;
+}
+
+.gridrows {
+    display: grid;
+    height: 50%;
+    grid-template-rows: 1/3;
+    grid-row: auto;
+    grid-gap: 0px;
+    padding: 0px;
+    width: auto;
+}
+
+.register {
+
+    background-color: rgb(50, 50, 50);
+    height: 400px;
+    padding: 2px;
+    margin: 50px 50px;
+}
+
+.regbutton {
+    border: 2px;
+    background: rgb(255, 126, 1);
+    background: linear-gradient(90deg, rgba(255, 126, 1, 1) 0%, rgba(255, 66, 31, 1) 100%);
+    font-size: 14px;
+    color: white;
+    height: 40px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 4px;
+    font-display: center;
+    position: relative;
+    width: 95%;
+}
+
+.regbutton:hover {
+    background: rgb(255, 124, 1);
+    background: linear-gradient(90deg, rgba(255, 124, 1, 1) 0%, rgba(254, 35, 31, 1) 100%);
+
+}
+
+.erreur {
+    color: red;
+    font-size: 15px;
+    display: none;
+
+}
+
+.already {
+
+    float: left;
+    margin-left: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.already:hover {
+
+    color: #ff421f;
+}
+
+.errormessage {
+    width: 400px;
+    height: 200px;
+    flex-direction: column;
+    display: flex;
+}
+
+/*Home*/
+
+#home {
+    background-color: rgb(50, 50, 50);
+}
+
+.home-background {
+    height: 400px;
+    width: 300px;
+    background-color: black;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 15px;
+}
+
+#hello {
+    color: white;
+    padding: 15px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.home-options {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+
+.home-options a {
+    width: 200px;
+    padding: 17px 20px;
+    background: rgb(255, 126, 1);
+    background: linear-gradient(90deg, rgba(255, 126, 1, 1) 0%, rgba(255, 66, 31, 1) 100%);
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+
+.home-options a:hover {
+    background: rgb(255, 124, 1);
+    background: linear-gradient(90deg, rgba(255, 124, 1, 1) 0%, rgba(254, 35, 31, 1) 100%);
+}
+
+
+.home-options a:last-child {
+    margin-top: 10px;
+
+}
+
+/*change password*/
+.changepwd-background {
+    height: 550px;
+    width: 300px;
+    background-color: black;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 15px;
+}
+
+#ccheckpwd, #cerrpwd {
+   padding: 0px 10px;
+    width: 290px;
+    text-align: left;
+    word-wrap: break-word;
+
+}
+
+/*Responsive connexion*/
+
+@media screen and (min-height: 870px) and (max-height: 1080px) {
+
+    .background {
+        height: 1080px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .background2 {
+        height: 1080px;
+        background-color: rgb(50, 50, 50);
+    }
+
+    .background2 img {
+        object-fit: cover;
+    }
+}
