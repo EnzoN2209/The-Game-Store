@@ -2,12 +2,22 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.table.DefaultTableModel;
+
 
 public class HelloWord {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             JFrame fenetre = new JFrame("Service après vente");
+            DefaultTableModel model = new DefaultTableModel(new Object[]{"Nom", "Prénom", "Téléphone", "Réclamation", "Option", "Action"}, 0) {
+                @Override
+                public boolean isCellEditable(int row, int column) {
+                    return false; // Empêcher l'édition des cellules
+                }
+            };
+
+            JTable table = new JTable(model); // Initialisation du tableau
 
             // Créer un JPanel pour l'en-tête et le bouton
             JPanel headerPanel = new JPanel(new BorderLayout()); // Utilisation d'un BorderLayout
@@ -16,11 +26,6 @@ public class HelloWord {
             // Créer un JPanel pour le titre "Aprevou" et le logo à gauche
             JPanel titlePanel = new JPanel(new FlowLayout(FlowLayout.LEFT)); // Alignement à gauche
             titlePanel.setOpaque(false); // Fond transparent
-
-            // Créer une étiquette pour le texte "Aprevou" en rouge
-            JLabel texteEtiquette = new JLabel("THE LAST GAME");
-            texteEtiquette.setForeground(Color.RED);
-            texteEtiquette.setFont(new Font("Arial", Font.PLAIN, 38));
 
             // Charger l'image "logo.png" à partir du chemin complet (ajustez le chemin si nécessaire)
             ImageIcon logoImage = new ImageIcon("C:\\wamp64\\www\\Javatest\\logo.png");
@@ -34,7 +39,6 @@ public class HelloWord {
             JLabel imageEtiquette = new JLabel(logoRedimensionne);
 
             // Ajouter les composants au titrePanel
-            titlePanel.add(texteEtiquette);
             titlePanel.add(imageEtiquette);
 
             // Ajouter le titrePanel au headerPanel
@@ -67,6 +71,7 @@ public class HelloWord {
             formulairePanel.add(nomLabel, gbc);
 
             gbc.gridx = 1;
+            gbc.gridy = 0;
             formulairePanel.add(nomField, gbc);
 
             gbc.gridx = 0;
@@ -74,6 +79,7 @@ public class HelloWord {
             formulairePanel.add(emailLabel, gbc);
 
             gbc.gridx = 1;
+            gbc.gridy = 1;
             formulairePanel.add(emailField, gbc);
 
             gbc.gridx = 0;
@@ -81,6 +87,7 @@ public class HelloWord {
             formulairePanel.add(localisationLabel, gbc);
 
             gbc.gridx = 1;
+            gbc.gridy = 2;
             formulairePanel.add(localisationField, gbc);
 
             gbc.gridx = 0;
@@ -88,6 +95,7 @@ public class HelloWord {
             formulairePanel.add(reclamationLabel, gbc);
 
             gbc.gridx = 1;
+            gbc.gridy = 3;
             formulairePanel.add(reclamationField, gbc);
 
             // Créer un JComboBox pour les options
@@ -149,17 +157,9 @@ public class HelloWord {
 
                     // Vérifier si les champs ne sont pas vides
                     if (!nom.isEmpty() && !email.isEmpty() && !localisation.isEmpty() && !reclamation.isEmpty() && choix != null) {
-                        JOptionPane.showMessageDialog(
-                                fenetre,
-                                "Formulaire soumis avec succès!\n\n" +
-                                        "Nom du client: " + nom + "\n" +
-                                        "Adresse e-mail: " + email + "\n" +
-                                        "Localisation: " + localisation + "\n" +
-                                        "Réclamation: " + reclamation + "\n" +
-                                        "Option sélectionnée : " + choix,
-                                "Formulaire soumis",
-                                JOptionPane.INFORMATION_MESSAGE
-                        );
+                        // Ajouter les données soumises à un tableau
+                        String[] rowData = {nom, email, localisation, reclamation, choix};
+                        model.addRow(rowData); // Ajouter la ligne de données
                     } else {
                         JOptionPane.showMessageDialog(
                                 fenetre,
@@ -177,9 +177,15 @@ public class HelloWord {
             gbc.gridwidth = 2; // Le bouton occupe deux colonnes
             formulairePanel.add(soumettreButton, gbc);
 
-            // Ajouter l'en-tête et le formulaire à la fenêtre
+            // Créer un JPanel pour le formulaire et le tableau (disposition verticale)
+            JPanel mainPanel = new JPanel();
+            mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
+            mainPanel.add(formulairePanel);
+            mainPanel.add(new JScrollPane(table));
+
+            // Ajouter l'en-tête et le formulaire au conteneur principal
             fenetre.add(headerPanel, BorderLayout.NORTH);
-            fenetre.add(formulairePanel, BorderLayout.CENTER);
+            fenetre.add(mainPanel, BorderLayout.CENTER);
 
             // Définir la taille de la fenêtre
             fenetre.setSize(800, 600);
